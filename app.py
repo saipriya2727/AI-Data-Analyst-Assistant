@@ -86,7 +86,7 @@ with st.sidebar:
         "Data Analysis",
         "Dashboard",
         "AI Report",
-        "About"
+        "About",
     ],
     icons=[
         "house",
@@ -95,30 +95,38 @@ with st.sidebar:
         "bar-chart",
         "graph-up",
         "file-earmark-text",
-        "info-circle"
+        "info-circle",
     ],
     menu_icon="cast",
     default_index=0,
+
     styles={
         "container": {
-            "padding": "5px",
-            "background-color": "#1F2937"
+            "padding": "12px",
+            "background-color": "#EEF6FF",
+            "border": "1px solid #D6E8FF",
+            "border-radius": "12px",
         },
+
         "icon": {
-            "color": "#60A5FA",
-            "font-size": "18px"
+            "color": "#2563EB",
+            "font-size": "18px",
         },
+
         "nav-link": {
-            "font-size": "16px",
+            "font-size": "15px",
             "font-weight": "600",
-            "color": "white",
+            "color": "#1F2937",
             "text-align": "left",
-            "margin": "4px",
-            "--hover-color": "#374151"
+            "margin": "3px",
+            "padding": "10px",
+            "--hover-color": "#DCEEFF",
         },
+
         "nav-link-selected": {
             "background-color": "#2563EB",
-            "color": "white"
+            "color": "white",
+            "border-radius": "8px",
         },
     },
 )
@@ -142,10 +150,11 @@ with st.sidebar:
         st.rerun()
 
     st.divider()
-
+    st.info("📄 Upload a PDF")
     uploaded_pdf = st.file_uploader(
-        "📄 Upload PDF",
-        type=["pdf"]
+        "",
+        type=["pdf"],
+        label_visibility="collapsed"
     )
 
     if uploaded_pdf:
@@ -155,10 +164,12 @@ with st.sidebar:
         st.success("✅ PDF Uploaded")
 
     st.divider()
+    st.info("📊 Upload a CSV / Excel Dataset")
 
     uploaded_data = st.file_uploader(
-        "📊 Upload CSV / Excel",
-        type=["csv", "xlsx"]
+        "",
+        type=["csv", "xlsx"],
+        label_visibility="collapsed"
     )
 
     if uploaded_data:

@@ -12,7 +12,6 @@ def load_css():
 
     html, body, [class*="css"]{
         font-family:'Poppins',sans-serif;
-        font-weight:500;
     }
 
     /* ==========================================
@@ -39,6 +38,8 @@ def load_css():
 
         border-right:1px solid #E2E8F0;
 
+        padding-top:15px;
+
     }
 
     /* ==========================================
@@ -61,17 +62,85 @@ def load_css():
 
     }
 
-    section[data-testid="stSidebar"] label{
+    /* ==========================================
+       SIDEBAR CARDS
+    ========================================== */
 
-        color:#1F2937 !important;
+    .stRadio{
 
-        font-weight:600 !important;
+        background:#EEF6FF;
+
+        border:1px solid #D6E8FF;
+
+        border-radius:15px;
+
+        padding:15px;
+
+        margin-bottom:18px;
 
     }
 
-    section[data-testid="stSidebar"] small{
+    .stFileUploader{
+
+        background:#EEF6FF;
+
+        border:1px solid #D6E8FF;
+
+        border-radius:15px;
+
+        padding:15px;
+
+        margin-bottom:18px;
+
+    }
+
+    .stAlert{
+
+        border-radius:15px;
+
+    }
+
+    /* ==========================================
+       FILE UPLOADER
+    ========================================== */
+
+    [data-testid="stFileUploader"]{
+
+        background:#EEF6FF;
+
+        border-radius:15px;
+
+        border:1px solid #D6E8FF;
+
+    }
+
+    [data-testid="stFileUploader"] button{
+
+        background:#2563EB !important;
+
+        color:white !important;
+
+        border:none !important;
+
+        border-radius:10px;
+
+        font-weight:700;
+
+    }
+
+    [data-testid="stFileUploader"] small{
 
         color:#64748B !important;
+
+    }
+
+    /* ==========================================
+       RADIO BUTTONS
+    ========================================== */
+
+    .stRadio label{
+
+        font-weight:600 !important;
 
     }
 
@@ -90,7 +159,7 @@ def load_css():
     }
 
     /* ==========================================
-       HEADINGS
+       TITLES
     ========================================== */
 
     h1{
@@ -131,12 +200,14 @@ def load_css():
 
     p,
     span,
-    li,
-    label{
+    label,
+    li{
 
-        color:#1F2937;
+        color:#1F2937 !important;
 
-        line-height:1.7;
+        font-weight:500;
+
+        line-height:1.6;
 
     }
 
@@ -155,6 +226,8 @@ def load_css():
         border-radius:10px;
 
         font-weight:700;
+
+        transition:.3s;
 
     }
 
@@ -179,6 +252,8 @@ def load_css():
         border:1px solid #E2E8F0;
 
         box-shadow:0 4px 12px rgba(0,0,0,.08);
+
+        padding:10px;
 
     }
 
@@ -207,6 +282,16 @@ def load_css():
     }
 
     /* ==========================================
+       SUCCESS MESSAGE
+    ========================================== */
+
+    div[data-testid="stAlert"]{
+
+        border-radius:15px;
+
+    }
+
+    /* ==========================================
        MOBILE
     ========================================== */
 
@@ -222,19 +307,19 @@ def load_css():
 
         h1{
 
-            font-size:30px !important;
+            font-size:28px !important;
 
         }
 
         h2{
 
-            font-size:24px !important;
+            font-size:22px !important;
 
         }
 
         h3{
 
-            font-size:20px !important;
+            font-size:18px !important;
 
         }
 
