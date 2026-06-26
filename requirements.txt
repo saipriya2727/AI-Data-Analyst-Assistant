@@ -8,3 +8,4 @@ openpyxl
 pypdf
 reportlab
 Pillow
+streamlit-option-menu

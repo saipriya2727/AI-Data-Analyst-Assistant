@@ -1,7 +1,7 @@
 import streamlit as st
 from styles import load_css
 from config import model
-
+from streamlit_option_menu import option_menu
 from pdf_utils import extract_pdf_text
 
 from excel_utils import (
@@ -47,13 +47,13 @@ load_css()
 # -----------------------------
 
 PAGES = [
-    "🏠 Home",
-    "🤖 AI Chat",
-    "📄 PDF Chat",
-    "📊 Data Analysis",
-    "📈 Dashboard",
-    "📥 AI Report",
-    "ℹ️ About"
+    "Home",
+    " AI Chat",
+    " PDF Chat",
+    " Data Analysis",
+    " Dashboard",
+    " AI Report",
+    " About"
 ]
 # -----------------------------
 # Sidebar
@@ -64,23 +64,71 @@ with st.sidebar:
     st.image("logo.png", width=150)
 
     st.markdown("# 🤖 AI Data Analyst")
-    st.caption("Powered by Google Gemini")
+    st.markdown(
+    "<p style='color:white; font-size:14px;'>Powered by Google Gemini</p>",
+    unsafe_allow_html=True
+)
 
 
-    st.title("AI Data Analyst")
+    st.markdown(
+    "<h2 style='color:white;'>🤖 AI Data Analyst</h2>",
+    unsafe_allow_html=True
+)
 
-    st.success("🟢 Gemini Connected")
+    st.info("🟢 Gemini Connected")
 
-    st.markdown("### Navigation")
-
-    page = st.radio(
-    "📂 Navigation",
-    PAGES
-   )
+    page = option_menu(
+    menu_title="📂 Navigation",
+    options=[
+        "Home",
+        "AI Chat",
+        "PDF Chat",
+        "Data Analysis",
+        "Dashboard",
+        "AI Report",
+        "About"
+    ],
+    icons=[
+        "house",
+        "robot",
+        "file-earmark-pdf",
+        "bar-chart",
+        "graph-up",
+        "file-earmark-text",
+        "info-circle"
+    ],
+    menu_icon="cast",
+    default_index=0,
+    styles={
+        "container": {
+            "padding": "5px",
+            "background-color": "#1F2937"
+        },
+        "icon": {
+            "color": "#60A5FA",
+            "font-size": "18px"
+        },
+        "nav-link": {
+            "font-size": "16px",
+            "font-weight": "600",
+            "color": "white",
+            "text-align": "left",
+            "margin": "4px",
+            "--hover-color": "#374151"
+        },
+        "nav-link-selected": {
+            "background-color": "#2563EB",
+            "color": "white"
+        },
+    },
+)
 
     st.divider()
 
-    st.write("Welcome Sai Priya! 👋")
+    st.markdown(
+    "<p style='color:white; font-weight:600;'>Welcome Sai Priya! 👋</p>",
+    unsafe_allow_html=True
+)
 
     if st.button("🗑️ Clear Chat"):
 
@@ -125,24 +173,25 @@ with st.sidebar:
 
     st.divider()
 
-    st.markdown("### 🛠 Built With")
+    st.markdown(
+    "<h3 style='color:white;'>🛠 Built With</h3>",
+    unsafe_allow_html=True
+   )
 
-    st.write("Python")
+    st.markdown("""
+   <div style="color:white; line-height:1.8;">
+      • Python<br>
+      • Streamlit<br>
+      • Google Gemini<br>
+      • Pandas<br>
+      • Plotly
+      </div>
+    """, unsafe_allow_html=True)
+    
 
-    st.write("Streamlit")
-
-    st.write("Google Gemini")
-
-    st.write("Pandas")
-
-    st.write("Plotly")
-# -----------------------------
-# Home Page
-# -----------------------------
-
-if page == "🏠 Home":
-
-    st.title("🤖 AI Data Analyst Assistant")
+ # Home Page
+ # -----------------------------
+if page == "Home":
 
     st.markdown("""
 ### AI-Powered Document Analysis & Data Analytics
@@ -321,9 +370,9 @@ Generate professional PDF reports instantly.
 # About Page
 # -----------------------------
 
-if page == "ℹ️ About":
+if page == "About":
 
-    st.title("ℹ️ About AI Data Analyst Assistant")
+    st.title("About AI Data Analyst Assistant")
 
     st.markdown("""
 ### An AI-powered platform for document analysis, data analytics, dashboards, and intelligent reporting.
@@ -391,7 +440,7 @@ Passionate about Artificial Intelligence, Machine Learning, Data Analytics, and 
 # AI Chat
 # -----------------------------
 
-if page == "🤖 AI Chat":
+if page == "AI Chat":
 
     st.title("💬 AI Chat")
 
@@ -435,7 +484,7 @@ if page == "🤖 AI Chat":
 # PDF Chat
 # -----------------------------
 
-if page == "📄 PDF Chat":
+if page == "PDF Chat":
 
     st.title("📄 PDF Chat")
 
@@ -483,7 +532,7 @@ Question:
 # Data Analysis
 # -----------------------------
 
-if page == "📊 Data Analysis":
+if page == "Data Analysis":
 
     st.title("📊 Data Analysis")
 
@@ -542,7 +591,7 @@ Question:
 # Dashboard
 # -----------------------------
 
-if page == "📈 Dashboard":
+if page == "Dashboard":
 
     st.title("📈 AI Dashboard")
 
@@ -643,7 +692,7 @@ if page == "📈 Dashboard":
 # AI Report
 # -----------------------------
 
-if page == "📥 AI Report":
+if page == "AI Report":
 
     st.title("📥 AI Report Generator")
 

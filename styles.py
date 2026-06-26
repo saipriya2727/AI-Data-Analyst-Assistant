@@ -8,17 +8,15 @@ def load_css():
        GOOGLE FONT
     ========================================== */
 
-    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
 
-    html, 
-    body, 
-    [class*="css"] {
-        font-family: 'Poppins', sans-serif;
-        font-weight: 500;
+    html, body, [class*="css"]{
+        font-family:'Poppins',sans-serif;
+        font-weight:500;
     }
 
     /* ==========================================
-       MAIN APP BACKGROUND
+       MAIN BACKGROUND
     ========================================== */
 
     .stApp{
@@ -28,7 +26,53 @@ def load_css():
             radial-gradient(circle at bottom left,#FEF3C7 0%,transparent 35%),
             #F8FAFC;
 
-        background-attachment: fixed;
+        background-attachment:fixed;
+    }
+
+    /* ==========================================
+       SIDEBAR
+    ========================================== */
+
+    section[data-testid="stSidebar"]{
+
+        background:#FFFFFF !important;
+
+        border-right:1px solid #E2E8F0;
+
+    }
+
+    /* ==========================================
+       SIDEBAR TEXT
+    ========================================== */
+
+    section[data-testid="stSidebar"] *{
+
+        color:#1F2937 !important;
+
+    }
+
+    section[data-testid="stSidebar"] h1,
+    section[data-testid="stSidebar"] h2,
+    section[data-testid="stSidebar"] h3{
+
+        color:#1E3A8A !important;
+
+        font-weight:700 !important;
+
+    }
+
+    section[data-testid="stSidebar"] label{
+
+        color:#1F2937 !important;
+
+        font-weight:600 !important;
+
+    }
+
+    section[data-testid="stSidebar"] small{
+
+        color:#64748B !important;
+
     }
 
     /* ==========================================
@@ -36,58 +80,165 @@ def load_css():
     ========================================== */
 
     .block-container{
-        padding-top:2rem;
-        padding-bottom:2rem;
+
         max-width:1200px;
+
+        padding-top:2rem;
+
+        padding-bottom:2rem;
+
     }
 
     /* ==========================================
        HEADINGS
     ========================================== */
 
+    h1{
+
+        color:#1E3A8A !important;
+
+        font-weight:800 !important;
+
+    }
+
+    h2{
+
+        color:#0F172A !important;
+
+        font-weight:700 !important;
+
+    }
+
+    h3{
+
+        color:#1E293B !important;
+
+        font-weight:700 !important;
+
+    }
+
+    h4{
+
+        color:#334155 !important;
+
+        font-weight:600 !important;
+
+    }
+
     /* ==========================================
-    TEXT
-     ========================================== */
+       TEXT
+    ========================================== */
 
     p,
-    label,
     span,
-    li{
-        color:#1F2937 !important;
-        font-weight:500 !important;
+    li,
+    label{
+
+        color:#1F2937;
+
         line-height:1.7;
+
     }
-                /* ==========================================
-                   BUTTONS
-             ========================================== */
+
+    /* ==========================================
+       BUTTONS
+    ========================================== */
 
     .stButton > button{
 
-         background:linear-gradient(90deg,#4F46E5,#2563EB);
+        background:linear-gradient(90deg,#4F46E5,#2563EB);
 
-         color:white !important;
+        color:white !important;
 
-         font-weight:700;
+        border:none;
 
-         border:none;
+        border-radius:10px;
 
-         border-radius:10px;
+        font-weight:700;
 
-      }
-                /* ==========================================
-           METRICS
-     ========================================== */
+    }
 
-   div[data-testid="metric-container"]{
+    .stButton > button:hover{
 
-       background:white;
+        transform:translateY(-2px);
 
-       border-radius:15px;
+        box-shadow:0 8px 20px rgba(37,99,235,.25);
 
-       border:1px solid #E2E8F0;
+    }
 
-      box-shadow:0 4px 12px rgba(0,0,0,0.08);
+    /* ==========================================
+       METRIC CARDS
+    ========================================== */
 
-     }
+    div[data-testid="metric-container"]{
+
+        background:white;
+
+        border-radius:15px;
+
+        border:1px solid #E2E8F0;
+
+        box-shadow:0 4px 12px rgba(0,0,0,.08);
+
+    }
+
+    /* ==========================================
+       DATAFRAME
+    ========================================== */
+
+    div[data-testid="stDataFrame"]{
+
+        border-radius:12px;
+
+        overflow:hidden;
+
+    }
+
+    /* ==========================================
+       EXPANDER
+    ========================================== */
+
+    .streamlit-expanderHeader{
+
+        color:#1E293B !important;
+
+        font-weight:700 !important;
+
+    }
+
+    /* ==========================================
+       MOBILE
+    ========================================== */
+
+    @media(max-width:768px){
+
+        .block-container{
+
+            padding-top:1rem;
+
+            padding-bottom:1rem;
+
+        }
+
+        h1{
+
+            font-size:30px !important;
+
+        }
+
+        h2{
+
+            font-size:24px !important;
+
+        }
+
+        h3{
+
+            font-size:20px !important;
+
+        }
+
+    }
+
     </style>
     """, unsafe_allow_html=True)
