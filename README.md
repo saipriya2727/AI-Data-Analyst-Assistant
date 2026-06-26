@@ -99,7 +99,7 @@ AI_CHAT_ASSISTANT/
 ### 1️⃣ Clone Repository
 
 ```bash
-git clone https://github.com/YOUR_USERNAME/AI-Data-Analyst-Assistant.git
+git clone https://github.com/saipriya2727/AI-Data-Analyst-Assistant.git
 ```
 
 ### 2️⃣ Move to Project Folder
