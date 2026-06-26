@@ -1,0 +1,10 @@
+streamlit
+google-generativeai
+python-dotenv
+pandas
+numpy
+plotly
+openpyxl
+pypdf
+reportlab
+Pillow
