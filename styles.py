@@ -1,218 +1,93 @@
 import streamlit as st
 
 def load_css():
-
     st.markdown("""
     <style>
 
-    /* ===========================
-       Main App Background
-    =========================== */
+    /* ==========================================
+       GOOGLE FONT
+    ========================================== */
+
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+    html, 
+    body, 
+    [class*="css"] {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 500;
+    }
+
+    /* ==========================================
+       MAIN APP BACKGROUND
+    ========================================== */
 
     .stApp{
-
         background:
-        radial-gradient(circle at top left,#FDEBFF 0%,transparent 35%),
-        radial-gradient(circle at top right,#D8F3FF 0%,transparent 35%),
-        radial-gradient(circle at bottom left,#FFF7D6 0%,transparent 30%),
-        linear-gradient(135deg,#F8FAFF 0%,#FDFBFF 100%);
+            radial-gradient(circle at top left,#EDE9FE 0%,transparent 40%),
+            radial-gradient(circle at top right,#DBEAFE 0%,transparent 40%),
+            radial-gradient(circle at bottom left,#FEF3C7 0%,transparent 35%),
+            #F8FAFC;
 
         background-attachment: fixed;
-
     }
 
-    /* ===========================
-       Main Container
-    =========================== */
+    /* ==========================================
+       MAIN CONTAINER
+    ========================================== */
 
-    .main{
-
-        padding:2rem;
-
+    .block-container{
+        padding-top:2rem;
+        padding-bottom:2rem;
+        max-width:1200px;
     }
 
-    /* ===========================
-       Sidebar
-    =========================== */
+    /* ==========================================
+       HEADINGS
+    ========================================== */
 
-    section[data-testid="stSidebar"]{
+    /* ==========================================
+    TEXT
+     ========================================== */
 
-        background:linear-gradient(
-        180deg,
-        #ECE2FF 0%,
-        #F6F2FF 100%
-        );
-
-        border-right:1px solid #E5E7EB;
-
+    p,
+    label,
+    span,
+    li{
+        color:#1F2937 !important;
+        font-weight:500 !important;
+        line-height:1.7;
     }
+                /* ==========================================
+                   BUTTONS
+             ========================================== */
 
-    /* ===========================
-       Headings
-    =========================== */
+    .stButton > button{
 
-    h1{
+         background:linear-gradient(90deg,#4F46E5,#2563EB);
 
-        font-size:42px;
+         color:white !important;
 
-        font-weight:800;
+         font-weight:700;
 
-        background:linear-gradient(
-        90deg,
-        #5B4BFF,
-        #2F80ED
-        );
+         border:none;
 
-        -webkit-background-clip:text;
+         border-radius:10px;
 
-        -webkit-text-fill-color:transparent;
+      }
+                /* ==========================================
+           METRICS
+     ========================================== */
 
-    }
+   div[data-testid="metric-container"]{
 
-    h2{
+       background:white;
 
-        color:#243B53;
+       border-radius:15px;
 
-        font-weight:700;
+       border:1px solid #E2E8F0;
 
-    }
+      box-shadow:0 4px 12px rgba(0,0,0,0.08);
 
-    h3{
-
-        color:#394867;
-
-    }
-
-    /* ===========================
-       Cards
-    =========================== */
-
-    div[data-testid="stMetric"]{
-
-        background:rgba(255,255,255,.72);
-
-        backdrop-filter:blur(12px);
-
-        border-radius:18px;
-
-        padding:18px;
-
-        border:1px solid rgba(255,255,255,.6);
-
-        box-shadow:
-        0 8px 25px rgba(120,120,180,.12);
-
-    }
-
-    /* ===========================
-       Buttons
-    =========================== */
-
-    .stButton>button{
-
-        border-radius:12px;
-
-        background:linear-gradient(
-        90deg,
-        #8B5CF6,
-        #4F46E5
-        );
-
-        color:white;
-
-        font-weight:700;
-
-        border:none;
-
-        height:48px;
-
-        width:100%;
-
-        transition:0.3s;
-
-    }
-
-    .stButton>button:hover{
-
-        transform:translateY(-2px);
-
-        box-shadow:0 8px 18px rgba(79,70,229,.35);
-
-    }
-
-    /* ===========================
-       Download Button
-    =========================== */
-
-    .stDownloadButton>button{
-
-        border-radius:12px;
-
-        background:linear-gradient(
-        90deg,
-        #10B981,
-        #06B6D4
-        );
-
-        color:white;
-
-        border:none;
-
-        font-weight:700;
-
-        width:100%;
-
-    }
-
-    /* ===========================
-       Expander
-    =========================== */
-
-    .streamlit-expanderHeader{
-
-        font-size:18px;
-
-        font-weight:700;
-
-    }
-
-    /* ===========================
-       DataFrame
-    =========================== */
-
-    div[data-testid="stDataFrame"]{
-
-        border-radius:15px;
-
-        overflow:hidden;
-
-        box-shadow:0 5px 18px rgba(0,0,0,.08);
-
-    }
-
-    /* ===========================
-       Success Box
-    =========================== */
-
-    div[data-testid="stAlert"]{
-
-        border-radius:15px;
-
-    }
-
-    /* ===========================
-       Chat Messages
-    =========================== */
-
-    div[data-testid="stChatMessage"]{
-
-        border-radius:15px;
-
-        background:rgba(255,255,255,.75);
-
-        backdrop-filter:blur(8px);
-
-    }
-
+     }
     </style>
     """, unsafe_allow_html=True)

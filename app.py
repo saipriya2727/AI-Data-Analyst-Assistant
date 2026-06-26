@@ -546,8 +546,11 @@ if page == "📈 Dashboard":
 
     st.title("📈 AI Dashboard")
 
-    st.info(
-        "Analyze your uploaded dataset using AI-powered insights, interactive charts, and statistical summaries."
+    st.markdown(
+        """
+        Analyze your uploaded dataset with AI-powered insights, interactive charts,
+        statistical summaries, and beautiful visualizations.
+        """
     )
 
     if st.session_state.df is None:
@@ -558,72 +561,85 @@ if page == "📈 Dashboard":
 
         df = st.session_state.df
 
-        st.success("✅ Dashboard loaded successfully!")
+        # -----------------------------
+        # Dataset Overview
+        # -----------------------------
 
-        # -----------------------------
-        # KPI Cards
-        # -----------------------------
         st.subheader("📊 Dataset Overview")
 
         col1, col2, col3, col4 = st.columns(4)
 
         with col1:
-            st.metric("📄 Rows", df.shape[0])
+            st.metric("📄 Rows", f"{df.shape[0]:,}")
 
         with col2:
             st.metric("📑 Columns", df.shape[1])
 
         with col3:
-            st.metric("❌ Missing Values", int(df.isnull().sum().sum()))
+            st.metric("❌ Missing", int(df.isnull().sum().sum()))
 
         with col4:
-            st.metric("🔄 Duplicate Rows", int(df.duplicated().sum()))
+            st.metric("🔄 Duplicates", int(df.duplicated().sum()))
 
-        st.divider()
+        st.markdown("---")
 
         # -----------------------------
-        # Dashboard Visuals
+        # Dashboard
         # -----------------------------
-        st.subheader("📈 Dashboard")
+
+        st.subheader("📈 Interactive Dashboard")
 
         show_dashboard(df)
 
-        st.divider()
+        st.markdown("---")
 
         # -----------------------------
-        # Dataset Statistics
+        # Dataset Preview & Statistics
         # -----------------------------
-        with st.expander("📋 Dataset Statistics", expanded=True):
 
-            st.dataframe(
-                df.describe().round(2),
-                use_container_width=True
-            )
+        col1, col2 = st.columns(2)
 
-        # -----------------------------
-        # Dataset Preview
-        # -----------------------------
-        with st.expander("👀 Dataset Preview"):
+        with col1:
 
-            st.dataframe(
-                df.head(10),
-                use_container_width=True
-            )
+            with st.expander("👀 Dataset Preview", expanded=True):
+
+                st.dataframe(
+                    df.head(10),
+                    use_container_width=True,
+                    height=350
+                )
+
+        with col2:
+
+            with st.expander("📋 Statistical Summary", expanded=True):
+
+                st.dataframe(
+                    df.describe().round(2),
+                    use_container_width=True,
+                    height=350
+                )
+
+        st.markdown("---")
 
         # -----------------------------
         # AI Insights
         # -----------------------------
-        with st.expander("🤖 AI Insights", expanded=True):
 
-            show_ai_insights(df)
+        st.subheader("🤖 AI Insights")
+
+        show_ai_insights(df)
+
+        st.markdown("---")
 
         # -----------------------------
         # Interactive Charts
         # -----------------------------
-        with st.expander("📊 Interactive Charts", expanded=True):
 
-            show_charts(df)
-# -----------------------------
+        st.subheader("📊 Interactive Charts")
+
+        show_charts(df)
+
+        st.success("✅ Dashboard loaded successfully!")# -----------------------------
 # AI Report
 # -----------------------------
 
