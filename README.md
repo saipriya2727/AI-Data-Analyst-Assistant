@@ -1,3 +1,10 @@
+![Python](https://img.shields.io/badge/Python-3.12-blue?logo=python)
+
+![Streamlit](https://img.shields.io/badge/Streamlit-App-red?logo=streamlit)
+
+![Gemini](https://img.shields.io/badge/Google-Gemini-blue)
+
+![License](https://img.shields.io/badge/License-MIT-green)
 # 🤖 AI Data Analyst Assistant
 
 An AI-powered data analytics application built using **Python**, **Streamlit**, and **Google Gemini AI**. This application enables users to analyze PDF documents, explore CSV/Excel datasets, generate AI-powered insights, visualize data through interactive dashboards, and download professional PDF reports.
@@ -65,25 +72,25 @@ AI_CHAT_ASSISTANT/
 
 ### 🏠 Home Page
 
-(Add Screenshot Here)
+![alt text](Home.png)
 
 ---
 
 ### 📈 Dashboard
 
-(Add Screenshot Here)
+![alt text](Dashboard.png)
 
 ---
 
 ### 📄 PDF Chat
 
-(Add Screenshot Here)
+![alt text](PDF_chat.png)
 
 ---
 
 ### 🤖 AI Chat
 
-(Add Screenshot Here)
+![alt text](AI_chat.png)
 
 ---
 
